@@ -47,8 +47,8 @@ export default function Home() {
                 href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20e%20quero%20revender%20Diow%20Play"
                 target="_blank"
               >
-                <button className="bg-blue-600 hover:bg-blue-700 transition w-full sm:w-[260px] py-6 rounded-2xl font-bold text-xl shadow-2xl text-center">
-                  🚀 Quero Revender
+                <button className="bg-blue-600 hover:bg-blue-700 transition w-full sm:w-[260px] py-8 rounded-2xl font-bold text-xl shadow-2xl text-center">
+                  Mais infomações
                 </button>
               </a>
 
@@ -56,7 +56,7 @@ export default function Home() {
                 href="https://diowplay.sigma.st/#/rs/K4Wrwq91eN/rlKWO3Wzo7"
                 target="_blank"
               >
-                <button className="border border-gray-600 hover:bg-white/10 transition w-full sm:w-[260px] py-6 rounded-2xl font-bold text-xl text-center">
+                <button className="border border-gray-600 hover:bg-white/10 transition w-full sm:w-[260px] py-8 rounded-2xl font-bold text-xl text-center">
                   Começar Agora
                 </button>
               </a>
