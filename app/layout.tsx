@@ -1,19 +1,19 @@
+import './globals.css'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Diow Play 🚀',
+  description: 'Revenda Diow Play',
+}
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html>
-      <body
-        style={{
-          margin: 0,
-          padding: 0,
-          background: "#000814",
-        }}
-      >
-        {children}
-      </body>
+    <html lang="pt-BR">
+      <body>{children}</body>
     </html>
-  );
+  )
 }
