@@ -9,8 +9,10 @@ export default function HomePage() {
         background:
           "linear-gradient(135deg,#000814 0%, #001d4d 100%)",
         color: "white",
+        overflow: "hidden",
       }}
     >
+      {/* CONTAINER */}
       <div
         style={{
           maxWidth: "1400px",
@@ -18,7 +20,7 @@ export default function HomePage() {
           padding: "50px 30px",
         }}
       >
-        {/* TOPO */}
+        {/* LOGO */}
         <div
           style={{
             display: "flex",
@@ -249,6 +251,156 @@ export default function HomePage() {
             />
           </div>
         </div>
+
+        {/* BENEFÍCIOS */}
+        <section
+          style={{
+            width: "100%",
+            padding: "80px 0 100px",
+          }}
+        >
+          {/* Texto topo */}
+          <div
+            style={{
+              marginBottom: "50px",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "42px",
+                color: "#fff",
+                lineHeight: 1.4,
+                maxWidth: "900px",
+                fontWeight: 500,
+              }}
+            >
+              Com a revenda Diow Play você ganha
+              dinheiro indicando e ativando assinaturas.
+              É rápido, fácil e{" "}
+              <span
+                style={{
+                  color: "#0066FF",
+                  fontWeight: 700,
+                }}
+              >
+                100% online!
+              </span>
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "25px",
+            }}
+          >
+            {[
+              {
+                icon: "💰",
+                title: "LUCRO ALTO",
+                desc: "Ganhos recorrentes e ótima margem de lucro.",
+              },
+              {
+                icon: "🎧",
+                title: "SUPORTE COMPLETO",
+                desc: "Equipe pronta para te ajudar sempre.",
+              },
+              {
+                icon: "🖥️",
+                title: "PAINEL FÁCIL",
+                desc: "Sistema intuitivo para gerenciar tudo.",
+              },
+              {
+                icon: "🚀",
+                title: "ATIVAÇÃO RÁPIDA",
+                desc: "Ative clientes em poucos segundos.",
+              },
+              {
+                icon: "👥",
+                title: "MATERIAL DE DIVULGAÇÃO",
+                desc: "Artes e conteúdos prontos para vender mais.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  background: "rgba(0,0,0,0.45)",
+                  border:
+                    "1px solid rgba(0,102,255,0.45)",
+                  borderRadius: "30px",
+                  padding: "40px 30px",
+                  textAlign: "center",
+                  backdropFilter: "blur(10px)",
+                  boxShadow:
+                    "0 0 25px rgba(0,102,255,0.2)",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: "70px",
+                    marginBottom: "25px",
+                  }}
+                >
+                  {item.icon}
+                </div>
+
+                <h3
+                  style={{
+                    fontSize: "34px",
+                    fontWeight: 900,
+                    marginBottom: "20px",
+                    color: "#fff",
+                  }}
+                >
+                  {item.title}
+                </h3>
+
+                <p
+                  style={{
+                    fontSize: "24px",
+                    color: "#ddd",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div
+            style={{
+              marginTop: "60px",
+              textAlign: "center",
+            }}
+          >
+            <a
+              href="https://diowplay.sigma.st/#/rs/K4Wrwq91eN/rlKWO3Wzo7"
+              target="_blank"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "20px",
+                background:
+                  "linear-gradient(90deg,#003cff,#0066FF)",
+                color: "#fff",
+                textDecoration: "none",
+                padding: "28px 50px",
+                borderRadius: "28px",
+                fontSize: "34px",
+                fontWeight: 900,
+                boxShadow:
+                  "0 0 40px rgba(0,102,255,0.45)",
+              }}
+            >
+              🚀 COMECE AGORA E MUDE SEUS RESULTADOS!
+            </a>
+          </div>
+        </section>
       </div>
     </div>
   );
