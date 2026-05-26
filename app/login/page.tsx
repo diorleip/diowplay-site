@@ -1,110 +1,160 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function LoginPage() {
-  const [user, setUser] = useState("");
+  const router = useRouter();
+
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function handleLogin(e: React.FormEvent) {
-    e.preventDefault();
-
-    if (!user || !password) {
-      alert("Preencha usuário e senha.");
+  const handleLogin = async () => {
+    if (!username || !password) {
+      alert("Preencha usuário e senha");
       return;
     }
 
-    localStorage.setItem("diow_user", user);
+    setLoading(true);
 
-    window.location.href = "/dashboard";
-  }
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      });
+
+      // LOGIN INVÁLIDO
+      if (!response.ok) {
+        const errorData = await response.json();
+
+        alert(errorData.message || "Usuário ou senha inválidos");
+
+        setLoading(false);
+        return;
+      }
+
+      const data = await response.json();
+
+      // LOGIN CERTO
+      if (data.success === true) {
+        router.push("/dashboard");
+      } else {
+        alert("Usuário ou senha inválidos");
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Erro ao conectar servidor");
+    }
+
+    setLoading(false);
+  };
 
   return (
-    <main className="min-h-screen bg-black relative overflow-hidden flex items-center justify-center px-6">
-      {/* Fundo */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/40 via-black to-cyan-950/20" />
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#050816] px-6">
+      {/* FUNDO */}
+      <div className="absolute left-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-blue-600/20 blur-3xl" />
 
-      {/* Blur */}
-      <div className="absolute top-[-120px] left-[-120px] w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-[-120px] right-[-120px] w-80 h-80 bg-blue-700/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-[-120px] right-[-120px] h-[320px] w-[320px] rounded-full bg-cyan-500/20 blur-3xl" />
 
-      {/* Conteúdo */}
-      <div className="relative z-10 w-full max-w-md">
-        <div className="bg-zinc-950/90 border border-cyan-500/20 rounded-3xl p-8 shadow-2xl backdrop-blur-md">
-          {/* Logo */}
-          <div className="flex flex-col items-center mb-8">
-            <Image
-              src="/logo.png"
-              alt="Diow Play"
-              width={90}
-              height={90}
-              className="mb-4 drop-shadow-[0_0_20px_rgba(0,255,255,0.35)]"
+      {/* CARD */}
+      <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+        {/* LOGO */}
+        <div className="mb-8 flex flex-col items-center justify-center">
+          <Image
+            src="/logo.png"
+            alt="Diow Play"
+            width={90}
+            height={90}
+            className="mb-4"
+            priority
+          />
+
+          <h1 className="text-4xl font-bold">
+            <span className="text-white">Diow</span>{" "}
+            <span className="text-[#0066FF]">Play</span>
+          </h1>
+
+          <p className="mt-2 text-sm text-gray-400">
+            Painel Oficial do Cliente
+          </p>
+        </div>
+
+        {/* USUÁRIO */}
+        <div className="mb-4">
+          <label className="mb-2 block text-sm text-gray-300">
+            Usuário
+          </label>
+
+          <input
+            type="text"
+            placeholder="Digite seu usuário"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            autoComplete="username"
+            className="w-full rounded-2xl border border-white/10 bg-[#0b1120] px-4 py-3 text-white outline-none transition focus:border-[#0066FF]"
+          />
+        </div>
+
+        {/* SENHA */}
+        <div className="mb-6">
+          <label className="mb-2 block text-sm text-gray-300">
+            Senha
+          </label>
+
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Digite sua senha"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleLogin();
+                }
+              }}
+              className="w-full rounded-2xl border border-white/10 bg-[#0b1120] px-4 py-3 pr-16 text-white outline-none transition focus:border-[#0066FF]"
             />
 
-            <h1 className="text-4xl font-black tracking-wide">
-              <span className="text-white">Diow</span>{" "}
-              <span className="text-cyan-400">Play</span>
-            </h1>
-
-            <p className="text-zinc-400 text-sm mt-2 text-center">
-              Painel de pedidos de filmes e séries
-            </p>
-          </div>
-
-          {/* Form */}
-          <form onSubmit={handleLogin} className="space-y-5">
-            <div>
-              <label className="text-sm text-zinc-300 mb-2 block">
-                Usuário
-              </label>
-
-              <input
-                type="text"
-                placeholder="Digite seu usuário"
-                value={user}
-                onChange={(e) => setUser(e.target.value)}
-                className="w-full h-12 px-4 rounded-xl bg-zinc-900 border border-zinc-800 text-white outline-none focus:border-cyan-400 transition"
-              />
-            </div>
-
-            <div>
-              <label className="text-sm text-zinc-300 mb-2 block">
-                Senha
-              </label>
-
-              <input
-                type="password"
-                placeholder="Digite sua senha"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full h-12 px-4 rounded-xl bg-zinc-900 border border-zinc-800 text-white outline-none focus:border-cyan-400 transition"
-              />
-            </div>
-
             <button
-              type="submit"
-              className="w-full h-12 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition font-bold text-black shadow-lg shadow-cyan-500/20"
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-medium text-[#0066FF]"
             >
-              Entrar
+              {showPassword ? "Ocultar" : "Mostrar"}
             </button>
-          </form>
+          </div>
+        </div>
 
-          {/* Telegram */}
-          <a
-            href="https://t.me/+uslLfs3-3mM4ODAx"
-            target="_blank"
-            className="mt-6 flex items-center justify-center text-sm text-cyan-400 hover:text-cyan-300 transition"
-          >
-            Entrar no canal oficial
-          </a>
+        {/* BOTÃO */}
+        <button
+          onClick={handleLogin}
+          disabled={loading}
+          className="w-full rounded-2xl bg-[#0066FF] py-3 text-lg font-semibold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {loading ? "Entrando..." : "Entrar"}
+        </button>
+
+        {/* FOOTER */}
+        <div className="mt-8 text-center">
+          <p className="text-sm text-gray-400">
+            Feito por Diow! 🚀
+          </p>
+
+          <p className="mt-1 text-xs text-gray-500">
+            © 2026 DiowPlay. Todos os direitos reservados.
+          </p>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="absolute bottom-4 left-0 w-full text-center text-sm text-zinc-500 px-4">
-        Feito por Diow! 🚀 © 2026 DiowPlay. Todos os direitos reservados.
-      </footer>
     </main>
   );
 }
