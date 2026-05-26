@@ -7,82 +7,93 @@ export default function Home() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
 
-        {/* BACKGROUND */}
-        <div className="absolute inset-0">
-
-          <Image
-            src="/revenda-banner.png"
-            alt="Revenda Diow Play"
-            fill
-            priority
-            className="object-cover"
-          />
-
-          <div className="absolute inset-0 bg-black/75" />
-
-        </div>
+        {/* FUNDO */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#020617] via-[#020817] to-[#020617]" />
 
         {/* CONTENT */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
 
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            {/* LOGO */}
-            <Image
-              src="/logo.png"
-              alt="Diow Play"
-              width={180}
-              height={60}
-              priority
-              className="mb-8"
-            />
+            {/* LEFT */}
+            <div className="text-center lg:text-left">
 
-            <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight">
-              Ganhe dinheiro revendendo{" "}
-              <span className="text-blue-500">
-                Diow Play 🚀
-              </span>
-            </h1>
+              {/* LOGO */}
+              <div className="flex justify-center lg:justify-start">
 
-            <p className="mt-6 text-gray-300 text-xl leading-relaxed max-w-2xl">
-              Comece sua revenda hoje e tenha lucros recorrentes.
-            </p>
+                <Image
+                  src="/logo.png"
+                  alt="Diow Play"
+                  width={180}
+                  height={60}
+                  priority
+                  className="mb-8"
+                />
 
-            {/* BOTÕES */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+              </div>
 
-              <a
-                href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20e%20quero%20revender%20Diow%20Play"
-                target="_blank"
-              >
-                <button className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto">
-                  🚀 Quero Revender
+              <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight">
+                Ganhe dinheiro revendendo{" "}
+                <span className="text-blue-500">
+                  Diow Play 🚀
+                </span>
+              </h1>
+
+              <p className="mt-6 text-gray-300 text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Comece sua revenda hoje e tenha lucros recorrentes.
+              </p>
+
+              {/* BOTÕES */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
+
+                <a
+                  href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20e%20quero%20revender%20Diow%20Play"
+                  target="_blank"
+                >
+                  <button className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto shadow-2xl">
+                    🚀 Quero Revender
+                  </button>
+                </a>
+
+                <button className="border border-gray-600 hover:bg-white/10 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto">
+                  Ver Demonstração
                 </button>
-              </a>
 
-              <button className="border border-gray-600 hover:bg-white/10 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto">
-                Ver Demonstração
-              </button>
+              </div>
+
+              {/* FEATURES */}
+              <div className="flex flex-wrap gap-6 mt-10 justify-center lg:justify-start text-gray-300">
+
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                  Painel Profissional
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                  Suporte Completo
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                  Streaming HD/FHD
+                </div>
+
+              </div>
 
             </div>
 
-            {/* FEATURES */}
-            <div className="flex flex-wrap gap-6 mt-10 text-gray-300">
+            {/* RIGHT IMAGE */}
+            <div className="flex justify-center">
 
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                Painel Profissional
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                Suporte Completo
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                Streaming HD/FHD
-              </div>
+              <Image
+                src="/revenda-banner.png"
+                alt="Revenda Banner"
+                width={700}
+                height={700}
+                priority
+                className="w-full max-w-[650px] object-contain drop-shadow-[0_0_40px_rgba(37,99,235,0.5)]"
+              />
 
             </div>
 
