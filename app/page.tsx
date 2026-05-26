@@ -5,17 +5,17 @@ export default function Home() {
     <main className="bg-[#020617] text-white min-h-screen overflow-hidden">
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
 
         {/* BACKGROUND */}
         <div className="absolute inset-0">
 
           <Image
             src="/revenda-banner.png"
-            alt="Banner"
+            alt="Revenda Diow Play"
             fill
             priority
-            className="object-cover opacity-30"
+            className="object-cover"
           />
 
           <div className="absolute inset-0 bg-black/75" />
@@ -23,120 +23,65 @@ export default function Home() {
         </div>
 
         {/* CONTENT */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
 
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
+          <div className="max-w-3xl">
 
-            {/* LEFT */}
-            <div className="text-center lg:text-left">
+            {/* LOGO */}
+            <Image
+              src="/logo.png"
+              alt="Diow Play"
+              width={180}
+              height={60}
+              priority
+              className="mb-8"
+            />
 
-              {/* LOGO */}
-              <div className="flex justify-center lg:justify-start">
-
-                <Image
-                  src="/logo.png"
-                  alt="Diow Play"
-                  width={180}
-                  height={60}
-                  priority
-                  className="mb-8"
-                />
-
-              </div>
-
-              <span className="bg-blue-600 px-4 py-2 rounded-full text-sm font-semibold">
-                Plataforma IPTV Profissional
+            <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight">
+              Ganhe dinheiro revendendo{" "}
+              <span className="text-blue-500">
+                Diow Play 🚀
               </span>
+            </h1>
 
-              <h1 className="mt-7 text-5xl lg:text-7xl font-extrabold leading-tight">
-                Revenda o{" "}
-                <span className="text-blue-500">
-                  Diow Play
-                </span>
-              </h1>
+            <p className="mt-6 text-gray-300 text-xl leading-relaxed max-w-2xl">
+              Comece sua revenda hoje e tenha lucros recorrentes.
+            </p>
 
-              <p className="mt-6 text-gray-300 text-xl leading-relaxed max-w-[600px] mx-auto lg:mx-0">
-                Ganhe dinheiro revendendo uma plataforma moderna com canais,
-                filmes e séries em alta qualidade.
-              </p>
+            {/* BOTÕES */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
 
-              {/* BUTTONS */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
-
-                <a
-                  href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20quero%20revender%20Diow%20Play"
-                  target="_blank"
-                >
-                  <button className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto">
-                    Quero Revender
-                  </button>
-                </a>
-
-                <button className="border border-gray-600 hover:bg-white/10 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto">
-                  Ver Demonstração
+              <a
+                href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20quero%20revender%20Diow%20Play"
+                target="_blank"
+              >
+                <button className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto">
+                  Quero Revender
                 </button>
+              </a>
 
-              </div>
-
-              {/* FEATURES */}
-              <div className="flex flex-wrap gap-6 mt-10 justify-center lg:justify-start text-gray-300">
-
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                  Painel Profissional
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                  Suporte Completo
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                  Streaming HD/FHD
-                </div>
-
-              </div>
+              <button className="border border-gray-600 hover:bg-white/10 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto">
+                Ver Demonstração
+              </button>
 
             </div>
 
-            {/* RIGHT CARD */}
-            <div className="flex justify-center">
+            {/* STATUS */}
+            <div className="flex flex-wrap gap-6 mt-10 text-gray-300">
 
-              <div className="bg-[#0F172A]/90 backdrop-blur-xl border border-gray-800 rounded-[35px] p-6 w-full max-w-[420px] shadow-2xl">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                Painel Profissional
+              </div>
 
-                <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                Suporte Completo
+              </div>
 
-                  <h2 className="text-4xl font-bold">
-                    Diow Play
-                  </h2>
-
-                  <span className="bg-green-500 text-sm px-3 py-1 rounded-full font-bold">
-                    ONLINE
-                  </span>
-
-                </div>
-
-                <div className="space-y-4">
-
-                  <div className="bg-blue-600 rounded-2xl p-5 text-lg font-semibold">
-                    📺 +10.000 Canais Ao Vivo
-                  </div>
-
-                  <div className="bg-[#020617] border border-gray-800 rounded-2xl p-5 text-lg font-semibold">
-                    🎬 Filmes e Séries
-                  </div>
-
-                  <div className="bg-[#020617] border border-gray-800 rounded-2xl p-5 text-lg font-semibold">
-                    📱 Smart TV / TV Box
-                  </div>
-
-                  <div className="bg-[#020617] border border-gray-800 rounded-2xl p-5 text-lg font-semibold">
-                    ⚡ Streaming Ultra Rápido
-                  </div>
-
-                </div>
-
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                Streaming HD/FHD
               </div>
 
             </div>
@@ -192,7 +137,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto bg-slate-900 border border-gray-800 rounded-[40px] p-14 text-center">
 
           <h2 className="text-5xl font-extrabold leading-tight">
-            Comece hoje sua revenda 
+            Comece hoje sua revenda 🚀
           </h2>
 
           <p className="text-gray-400 mt-6 text-xl">
