@@ -5,9 +5,9 @@ export default function Home() {
     <main className="min-h-screen bg-[#020617] text-white overflow-hidden">
 
       {/* HERO */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
+      <section className="max-w-7xl mx-auto px-6 py-28">
 
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
           {/* LEFT */}
           <div className="text-center lg:text-left">
@@ -18,10 +18,10 @@ export default function Home() {
               <Image
                 src="/logo.png"
                 alt="Diow Play"
-                width={180}
-                height={60}
+                width={190}
+                height={70}
                 priority
-                className="mb-8"
+                className="mb-10"
               />
 
             </div>
@@ -33,42 +33,47 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mt-6 text-gray-300 text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-8 text-gray-300 text-2xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Comece sua revenda hoje e tenha lucros recorrentes.
             </p>
 
             {/* BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-5 mt-12 justify-center lg:justify-start">
 
               <a
                 href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20e%20quero%20revender%20Diow%20Play"
                 target="_blank"
               >
-                <button className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto shadow-2xl">
-                  🚀 Quero Revender
+                <button className="bg-blue-600 hover:bg-blue-700 transition w-full sm:w-[260px] py-5 rounded-2xl font-bold text-xl shadow-2xl text-center">
+                Quero Revender
                 </button>
               </a>
 
-              <button className="border border-gray-600 hover:bg-white/10 transition px-8 py-4 rounded-2xl font-bold text-lg w-full sm:w-auto">
-                Ver Demonstração
-              </button>
+              <a
+                href="https://diowplay.sigma.st/#/rs/K4Wrwq91eN/rlKWO3Wzo7"
+                target="_blank"
+              >
+                <button className="border border-gray-600 hover:bg-white/10 transition w-full sm:w-[260px] py-5 rounded-2xl font-bold text-xl text-center">
+                  Começar Agora
+                </button>
+              </a>
 
             </div>
 
             {/* FEATURES */}
-            <div className="flex flex-wrap gap-6 mt-10 justify-center lg:justify-start text-gray-300">
+            <div className="flex flex-wrap gap-8 mt-14 justify-center lg:justify-start text-gray-300 text-lg">
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <div className="w-3 h-3 rounded-full bg-blue-500"></div>
                 Painel Profissional
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <div className="w-3 h-3 rounded-full bg-blue-500"></div>
                 Suporte Completo
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <div className="w-3 h-3 rounded-full bg-blue-500"></div>
                 Streaming HD/FHD
               </div>
@@ -83,10 +88,10 @@ export default function Home() {
             <Image
               src="/revenda-banner.png"
               alt="Revenda Banner"
-              width={700}
-              height={700}
+              width={750}
+              height={750}
               priority
-              className="w-full max-w-[650px] object-contain"
+              className="w-full max-w-[700px] object-contain"
             />
 
           </div>
@@ -96,14 +101,14 @@ export default function Home() {
       </section>
 
       {/* BENEFÍCIOS */}
-      <section className="px-6 pb-24">
+      <section className="px-6 py-20">
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-5 gap-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-5 gap-7">
 
           {/* CARD */}
-          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-7 text-center shadow-xl">
+          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-8 text-center shadow-xl">
 
-            <div className="text-5xl mb-5">
+            <div className="text-5xl mb-6">
               💰
             </div>
 
@@ -111,16 +116,16 @@ export default function Home() {
               LUCRO ALTO
             </h3>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-400 mt-5 leading-relaxed">
               Comissões atrativas e recorrentes
             </p>
 
           </div>
 
           {/* CARD */}
-          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-7 text-center shadow-xl">
+          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-8 text-center shadow-xl">
 
-            <div className="text-5xl mb-5">
+            <div className="text-5xl mb-6">
               🎧
             </div>
 
@@ -128,16 +133,16 @@ export default function Home() {
               SUPORTE
             </h3>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-400 mt-5 leading-relaxed">
               Equipe pronta para ajudar sempre
             </p>
 
           </div>
 
           {/* CARD */}
-          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-7 text-center shadow-xl">
+          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-8 text-center shadow-xl">
 
-            <div className="text-5xl mb-5">
+            <div className="text-5xl mb-6">
               🖥️
             </div>
 
@@ -145,16 +150,16 @@ export default function Home() {
               PAINEL FÁCIL
             </h3>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-400 mt-5 leading-relaxed">
               Sistema intuitivo e completo
             </p>
 
           </div>
 
           {/* CARD */}
-          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-7 text-center shadow-xl">
+          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-8 text-center shadow-xl">
 
-            <div className="text-5xl mb-5">
+            <div className="text-5xl mb-6">
               🚀
             </div>
 
@@ -162,16 +167,16 @@ export default function Home() {
               ATIVAÇÃO
             </h3>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-400 mt-5 leading-relaxed">
               Ative clientes em segundos
             </p>
 
           </div>
 
           {/* CARD */}
-          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-7 text-center shadow-xl">
+          <div className="bg-slate-900 border border-blue-600 rounded-[30px] p-8 text-center shadow-xl">
 
-            <div className="text-5xl mb-5">
+            <div className="text-5xl mb-6">
               📢
             </div>
 
@@ -179,7 +184,7 @@ export default function Home() {
               DIVULGAÇÃO
             </h3>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-gray-400 mt-5 leading-relaxed">
               Artes prontas para vender mais
             </p>
 
@@ -188,14 +193,14 @@ export default function Home() {
         </div>
 
         {/* BOTÃO */}
-        <div className="flex justify-center mt-14">
+        <div className="flex justify-center mt-20">
 
           <a
             href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20e%20quero%20revender%20Diow%20Play"
             target="_blank"
           >
-            <button className="bg-blue-600 hover:bg-blue-700 transition px-12 py-5 rounded-[25px] text-2xl font-bold shadow-2xl">
-              🚀 Quero Revender
+            <button className="bg-blue-600 hover:bg-blue-700 transition px-14 py-6 rounded-[25px] text-2xl font-bold shadow-2xl">
+              Quero Revender
             </button>
           </a>
 
@@ -204,13 +209,13 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-gray-800 py-10 text-center text-gray-400">
+      <footer className="border-t border-gray-800 py-12 text-center text-gray-400 mt-10">
 
         <p className="text-lg">
           Feito por Diow! 🚀
         </p>
 
-        <p className="mt-2">
+        <p className="mt-3">
           © 2026 DiowPlay. Todos os direitos reservados.
         </p>
 
