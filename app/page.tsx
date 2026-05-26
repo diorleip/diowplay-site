@@ -13,7 +13,7 @@ export default function Home() {
             <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight">
               Revenda o{" "}
               <span className="text-blue-500">
-                Diow Play
+                Diow Play  🚀
               </span>
             </h1>
 
