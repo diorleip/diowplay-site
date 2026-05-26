@@ -192,19 +192,7 @@ export default function Home() {
 
         </div>
 
-        {/* BOTÃO */}
-        <div className="flex justify-center mt-20">
-
-          <a
-            href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20e%20quero%20revender%20Diow%20Play"
-            target="_blank"
-          >
-            <button className="bg-blue-600 hover:bg-blue-700 transition px-14 py-6 rounded-[25px] text-2xl font-bold shadow-2xl">
-              Quero Revender
-            </button>
-          </a>
-
-        </div>
+        <div className="mt-20"></div>
 
       </section>
 
