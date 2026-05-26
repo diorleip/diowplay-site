@@ -1,407 +1,192 @@
-import Image from "next/image";
+'use client'
 
-export default function HomePage() {
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import {
+  Tv,
+  Film,
+  Smartphone,
+  CheckCircle,
+  PlayCircle
+} from 'lucide-react'
+
+export default function Home() {
   return (
-    <div
-      style={{
-        width: "100%",
-        minHeight: "100vh",
-        background:
-          "linear-gradient(135deg,#000814 0%, #001d4d 100%)",
-        color: "white",
-        overflow: "hidden",
-      }}
-    >
-      {/* CONTAINER */}
-      <div
-        style={{
-          maxWidth: "1400px",
-          margin: "0 auto",
-          padding: "50px 30px",
-        }}
-      >
-        {/* LOGO */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-            marginBottom: "60px",
-          }}
-        >
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={90}
-            height={90}
-          />
+    <main className="bg-[#050816] min-h-screen text-white overflow-hidden">
+      
+      {/* HERO */}
+      <section className="relative px-5 py-16 md:py-20 max-w-6xl mx-auto">
+        
+        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-600/20 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500/10 blur-3xl rounded-full" />
 
+        <div className="relative z-10 grid md:grid-cols-2 gap-10 items-center">
+
+          {/* TEXTOS */}
           <div>
-            <h1
-              style={{
-                margin: 0,
-                fontSize: "60px",
-                fontWeight: 900,
-                lineHeight: 1,
-              }}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-4xl md:text-5xl font-bold leading-tight"
             >
-              DIOW
-            </h1>
-
-            <p
-              style={{
-                margin: 0,
-                color: "#0066FF",
-                fontSize: "34px",
-                fontWeight: 700,
-                letterSpacing: "6px",
-              }}
-            >
-              PLAY
-            </p>
-          </div>
-        </div>
-
-        {/* HERO */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "60px",
-            alignItems: "center",
-          }}
-        >
-          {/* TEXTO */}
-          <div>
-            <h2
-              style={{
-                fontSize: "72px",
-                fontWeight: 900,
-                lineHeight: 1,
-                margin: 0,
-              }}
-            >
-              Ganhe dinheiro revendendo
-            </h2>
-
-            <h3
-              style={{
-                fontSize: "80px",
-                fontWeight: 900,
-                color: "#0066FF",
-                marginTop: "15px",
-                marginBottom: "30px",
-              }}
-            >
-              Diow Play 🚀
-            </h3>
-
-            <p
-              style={{
-                fontSize: "34px",
-                color: "#ddd",
-                lineHeight: 1.4,
-                marginBottom: "50px",
-              }}
-            >
-              Comece sua revenda hoje e tenha{" "}
-              <span
-                style={{
-                  color: "#0066FF",
-                  fontWeight: 700,
-                }}
-              >
-                lucros recorrentes.
+              Revenda o{' '}
+              <span className="text-[#0066FF]">
+                Diow Play 
               </span>
+            </motion.h1>
+
+            <p className="text-gray-300 mt-5 text-base md:text-lg leading-relaxed max-w-lg">
+              Ganhe dinheiro revendendo uma plataforma moderna com
+              canais, filmes e séries em alta qualidade.
             </p>
 
             {/* BOTÕES */}
-            <div
-              style={{
-                display: "flex",
-                gap: "25px",
-                flexWrap: "wrap",
-              }}
-            >
-              {/* BOTAO 1 */}
-              <a
-                href="https://diowplay.sigma.st/#/rs/K4Wrwq91eN/rlKWO3Wzo7"
+            <div className="flex flex-wrap gap-4 mt-8">
+              
+              <Link
+                href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20quero%20revender%20Diow%20Play%20🚀"
                 target="_blank"
-                style={{
-                  flex: 1,
-                  minWidth: "320px",
-                  background:
-                    "linear-gradient(90deg,#003cff,#0066FF)",
-                  borderRadius: "25px",
-                  padding: "28px",
-                  textDecoration: "none",
-                  color: "white",
-                  boxShadow:
-                    "0 0 30px rgba(0,102,255,0.45)",
-                }}
               >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <h4
-                      style={{
-                        margin: 0,
-                        fontSize: "32px",
-                        fontWeight: 900,
-                      }}
-                    >
-                      QUERO REVENDER
-                    </h4>
+                <button className="bg-[#0066FF] hover:bg-blue-700 transition px-6 py-3 rounded-xl font-semibold text-sm">
+                  Quero Revender
+                </button>
+              </Link>
 
-                    <p
-                      style={{
-                        marginTop: "10px",
-                        color: "#ddd",
-                        fontSize: "18px",
-                      }}
-                    >
-                      Começar agora
-                    </p>
-                  </div>
+              <button className="border border-white/20 px-6 py-3 rounded-xl text-sm flex items-center gap-2 hover:bg-white/5 transition">
+                <PlayCircle size={18} />
+                Ver Demonstração
+              </button>
 
-                  <span
-                    style={{
-                      fontSize: "42px",
-                    }}
-                  >
-                    →
-                  </span>
-                </div>
-              </a>
+            </div>
 
-              {/* BOTAO 2 */}
-              <a
-                href="https://wa.me/5547992027636?text=Olá vim do site quero mais informações sobre revenda diow play"
-                target="_blank"
-                style={{
-                  flex: 1,
-                  minWidth: "320px",
-                  background:
-                    "linear-gradient(90deg,#00aa44,#00cc66)",
-                  borderRadius: "25px",
-                  padding: "28px",
-                  textDecoration: "none",
-                  color: "white",
-                  boxShadow:
-                    "0 0 30px rgba(0,255,120,0.35)",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                  }}
-                >
-                  <div>
-                    <h4
-                      style={{
-                        margin: 0,
-                        fontSize: "32px",
-                        fontWeight: 900,
-                      }}
-                    >
-                      MAIS INFORMAÇÕES
-                    </h4>
+            {/* STATUS */}
+            <div className="flex flex-wrap gap-5 mt-8 text-sm text-gray-300">
+              <span className="flex items-center gap-2">
+                <CheckCircle size={16} className="text-[#0066FF]" />
+                Painel Profissional
+              </span>
 
-                    <p
-                      style={{
-                        marginTop: "10px",
-                        color: "#eee",
-                        fontSize: "18px",
-                      }}
-                    >
-                      Falar no WhatsApp
-                    </p>
-                  </div>
-
-                  <span
-                    style={{
-                      fontSize: "42px",
-                    }}
-                  >
-                    →
-                  </span>
-                </div>
-              </a>
+              <span className="flex items-center gap-2">
+                <CheckCircle size={16} className="text-[#0066FF]" />
+                Suporte Completo
+              </span>
             </div>
           </div>
 
-          {/* IMAGEM */}
-          <div>
-            <Image
-              src="/revenda-banner.png"
-              alt="Banner"
-              width={900}
-              height={900}
-              style={{
-                width: "100%",
-                height: "auto",
-              }}
-            />
-          </div>
-        </div>
-
-        {/* BENEFÍCIOS */}
-        <section
-          style={{
-            width: "100%",
-            padding: "80px 0 100px",
-          }}
-        >
-          {/* Texto topo */}
-          <div
-            style={{
-              marginBottom: "50px",
-            }}
+          {/* MOCKUP */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="flex justify-center"
           >
-            <p
-              style={{
-                fontSize: "42px",
-                color: "#fff",
-                lineHeight: 1.4,
-                maxWidth: "900px",
-                fontWeight: 500,
-              }}
-            >
-              Com a revenda Diow Play você ganha
-              dinheiro indicando e ativando assinaturas.
-              É rápido, fácil e{" "}
-              <span
-                style={{
-                  color: "#0066FF",
-                  fontWeight: 700,
-                }}
-              >
-                100% online!
-              </span>
-            </p>
-          </div>
+            <div className="bg-[#0B1120] border border-white/10 rounded-3xl p-5 w-[280px] shadow-2xl">
+              
+              <div className="bg-[#111827] rounded-2xl p-4">
 
-          {/* Cards */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns:
-                "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "25px",
-            }}
-          >
-            {[
-              {
-                icon: "💰",
-                title: "LUCRO ALTO",
-                desc: "Ganhos recorrentes e ótima margem de lucro.",
-              },
-              {
-                icon: "🎧",
-                title: "SUPORTE COMPLETO",
-                desc: "Equipe pronta para te ajudar sempre.",
-              },
-              {
-                icon: "🖥️",
-                title: "PAINEL FÁCIL",
-                desc: "Sistema intuitivo para gerenciar tudo.",
-              },
-              {
-                icon: "🚀",
-                title: "ATIVAÇÃO RÁPIDA",
-                desc: "Ative clientes em poucos segundos.",
-              },
-              {
-                icon: "👥",
-                title: "MATERIAL DE DIVULGAÇÃO",
-                desc: "Artes e conteúdos prontos para vender mais.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                style={{
-                  background: "rgba(0,0,0,0.45)",
-                  border:
-                    "1px solid rgba(0,102,255,0.45)",
-                  borderRadius: "30px",
-                  padding: "40px 30px",
-                  textAlign: "center",
-                  backdropFilter: "blur(10px)",
-                  boxShadow:
-                    "0 0 25px rgba(0,102,255,0.2)",
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: "70px",
-                    marginBottom: "25px",
-                  }}
-                >
-                  {item.icon}
+                <div className="flex justify-between items-center mb-4">
+                  <h2 className="font-bold text-lg">
+                    Diow Play
+                  </h2>
+
+                  <span className="bg-green-500 text-xs px-2 py-1 rounded-full">
+                    ONLINE
+                  </span>
                 </div>
 
-                <h3
-                  style={{
-                    fontSize: "34px",
-                    fontWeight: 900,
-                    marginBottom: "20px",
-                    color: "#fff",
-                  }}
-                >
-                  {item.title}
-                </h3>
+                <div className="space-y-3">
+                  
+                  <div className="bg-[#0066FF] rounded-xl p-3 flex items-center gap-3">
+                    <Tv size={20} />
+                    <span className="text-sm">Canais Ao Vivo</span>
+                  </div>
 
-                <p
-                  style={{
-                    fontSize: "24px",
-                    color: "#ddd",
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {item.desc}
-                </p>
+                  <div className="bg-[#111827] border border-white/10 rounded-xl p-3 flex items-center gap-3">
+                    <Film size={20} />
+                    <span className="text-sm">Filmes e Séries</span>
+                  </div>
+
+                  <div className="bg-[#111827] border border-white/10 rounded-xl p-3 flex items-center gap-3">
+                    <Smartphone size={20} />
+                    <span className="text-sm">Smart TV / TV Box</span>
+                  </div>
+
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          </motion.div>
 
-          {/* CTA */}
-          <div
-            style={{
-              marginTop: "60px",
-              textAlign: "center",
-            }}
-          >
-            <a
-              href="https://diowplay.sigma.st/#/rs/K4Wrwq91eN/rlKWO3Wzo7"
-              target="_blank"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "20px",
-                background:
-                  "linear-gradient(90deg,#003cff,#0066FF)",
-                color: "#fff",
-                textDecoration: "none",
-                padding: "28px 50px",
-                borderRadius: "28px",
-                fontSize: "34px",
-                fontWeight: 900,
-                boxShadow:
-                  "0 0 40px rgba(0,102,255,0.45)",
-              }}
+        </div>
+      </section>
+
+      {/* BENEFÍCIOS */}
+      <section className="px-5 pb-16 max-w-6xl mx-auto">
+        
+        <div className="grid md:grid-cols-3 gap-5">
+
+          {[
+            {
+              title: 'Painel Completo',
+              desc: 'Controle clientes e acessos facilmente.'
+            },
+            {
+              title: 'Conteúdo Atualizado',
+              desc: 'Filmes, séries e canais sempre atualizados.'
+            },
+            {
+              title: 'Compatibilidade Total',
+              desc: 'Funciona em Smart TVs, celular e TV Box.'
+            }
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-[#0B1120] border border-white/10 rounded-2xl p-5"
             >
-              🚀 COMECE AGORA E MUDE SEUS RESULTADOS!
-            </a>
-          </div>
-        </section>
-      </div>
-    </div>
-  );
+              <h3 className="text-lg font-semibold mb-2">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="px-5 pb-16 max-w-4xl mx-auto text-center">
+
+        <div className="bg-[#0B1120] border border-white/10 rounded-3xl p-8">
+
+          <h2 className="text-3xl font-bold">
+            Comece hoje sua revenda 
+          </h2>
+
+          <p className="text-gray-400 mt-4 text-sm md:text-base">
+            Entre em contato agora e tenha acesso imediato ao painel.
+          </p>
+
+          <Link
+            href="https://wa.me/5547992027636?text=Olá%20vim%20do%20site%20quero%20revender%20Diow%20Play%20🚀"
+            target="_blank"
+          >
+            <button className="mt-6 bg-[#0066FF] hover:bg-blue-700 transition px-8 py-3 rounded-xl font-semibold">
+              Falar no WhatsApp
+            </button>
+          </Link>
+
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-white/10 py-6 text-center text-gray-400 text-sm">
+        <p>Feito por Diow! 🚀</p>
+        <p className="mt-1">
+          © 2026 DiowPlay. Todos os direitos reservados.
+        </p>
+      </footer>
+
+    </main>
+  )
 }
