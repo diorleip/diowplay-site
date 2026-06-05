@@ -35,8 +35,15 @@ export default function LoginPage() {
       const data = await response.json();
 
       if (data.success) {
-        router.push("/dashboard");
-      } else {
+  localStorage.setItem(
+    "diow_user_info",
+    JSON.stringify({
+      username,
+    })
+  );
+
+  router.push("/dashboard");
+}else {
         alert(data.message || "Usuário ou senha inválidos");
       }
     } catch (error) {

@@ -77,13 +77,13 @@ export default function DashboardPage() {
     }
   }, []);
 
-  function logout() {
-    localStorage.removeItem("diow_user");
-    localStorage.removeItem("diow_user_info");
-    localStorage.removeItem("diow_server_info");
+ function logout() {
+  localStorage.removeItem("diow_user");
+  localStorage.removeItem("diow_user_info");
+  localStorage.removeItem("diow_server_info");
 
-    window.location.href = "/login";
-  }
+  window.location.href = "/api/logout";
+}
 
   return (
     <main className="min-h-screen bg-[#070b14] flex flex-col text-white">
