@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/dashboard/layout,_N_T_/dashboard/serie/layout,_N_T_/dashboard/serie/nova/layout,_N_T_/dashboard/serie/nova/page,_N_T_/dashboard/serie/nova"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/dashboard/serie/nova/__PAGE__",
+    "/dashboard/serie/nova",
+    "/dashboard/serie",
+    "/dashboard",
+    "/_index",
+    "/_head"
+  ]
+}

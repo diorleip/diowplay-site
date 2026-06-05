@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/login/route": "app/api/login/route.js",
+  "/dashboard/canal/page": "app/dashboard/canal/page.js",
+  "/dashboard/filme/page": "app/dashboard/filme/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/pedidos/page": "app/dashboard/pedidos/page.js",
+  "/dashboard/reportar/page": "app/dashboard/reportar/page.js",
+  "/dashboard/serie/episodios/page": "app/dashboard/serie/episodios/page.js",
+  "/dashboard/serie/nova/page": "app/dashboard/serie/nova/page.js",
+  "/dashboard/serie/page": "app/dashboard/serie/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js"
+}

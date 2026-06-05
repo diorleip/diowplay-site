@@ -1,0 +1,13 @@
+var R=require("../../../chunks/ssr/[turbopack]_runtime.js")("server/app/dashboard/reportar/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0zhfr0l._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_esm_build_templates_app-page_0hqh6o2.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0_715rj._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__01i7tsd._.js")
+R.c("server/chunks/ssr/pedidos_diowplay_app_layout_tsx_037jn73._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_0inhx6q._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_forbidden_0ghu-f7.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_unauthorized_0cjv-23.js")
+R.c("server/chunks/ssr/node_modules_next_dist_client_components_builtin_global-error_0lgvd_..js")
+R.c("server/chunks/ssr/05p-_diowplay__next-internal_server_app_dashboard_reportar_page_actions_0.4bn.0.js")
+R.m(6594)
+module.exports=R.m(6594).exports

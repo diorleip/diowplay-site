@@ -1,0 +1,15 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/login/route": "/api/login",
+  "/dashboard/canal/page": "/dashboard/canal",
+  "/dashboard/filme/page": "/dashboard/filme",
+  "/dashboard/page": "/dashboard",
+  "/dashboard/pedidos/page": "/dashboard/pedidos",
+  "/dashboard/reportar/page": "/dashboard/reportar",
+  "/dashboard/serie/episodios/page": "/dashboard/serie/episodios",
+  "/dashboard/serie/nova/page": "/dashboard/serie/nova",
+  "/dashboard/serie/page": "/dashboard/serie",
+  "/login/page": "/login",
+  "/page": "/"
+}

@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/dashboard/layout,_N_T_/dashboard/serie/layout,_N_T_/dashboard/serie/episodios/layout,_N_T_/dashboard/serie/episodios/page,_N_T_/dashboard/serie/episodios"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/dashboard/serie/episodios/__PAGE__",
+    "/dashboard/serie/episodios",
+    "/dashboard/serie",
+    "/dashboard",
+    "/_index",
+    "/_head"
+  ]
+}
