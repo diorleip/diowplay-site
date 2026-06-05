@@ -1,9 +1,18 @@
 export async function enviarTelegram(
   mensagem: string
 ) {
-  alert("TESTE TELEGRAM:\n\n" + mensagem);
+  const response = await fetch(
+    "/api/telegram",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        mensagem,
+      }),
+    }
+  );
 
-  return {
-    ok: true,
-  };
+  return await response.json();
 }
