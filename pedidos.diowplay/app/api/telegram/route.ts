@@ -20,9 +20,11 @@ export async function POST(req: NextRequest) {
 
     const data = await response.json();
 
+    console.log("TELEGRAM RESPONSE:", data);
+
     return NextResponse.json(data);
   } catch (error) {
-    console.error("Erro Telegram:", error);
+    console.error("ERRO TELEGRAM:", error);
 
     return NextResponse.json(
       { ok: false },
