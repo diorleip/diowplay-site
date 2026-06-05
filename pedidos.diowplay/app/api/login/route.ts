@@ -4,27 +4,27 @@ export async function POST(req: Request) {
   try {
     const { username, password } = await req.json();
 
-    const SERVER = "http://pc123.xyz.lat:80";
-
     const response = await fetch(
-      `${SERVER}/player_api.php?username=${username}&password=${password}`,
+      `http://pc123.xyz/player_api.php?username=${encodeURIComponent(
+        username
+      )}&password=${encodeURIComponent(password)}`,
       {
+        method: "GET",
         cache: "no-store",
       }
     );
 
+    if (!response.ok) {
+      throw new Error(`Servidor IPTV retornou ${response.status}`);
+    }
+
     const data = await response.json();
 
-    // LOGIN VÁLIDO
     if (data?.user_info?.auth == 1) {
       const res = NextResponse.json({
         success: true,
-        username: data.user_info.username,
-        status: data.user_info.status,
-        exp_date: data.user_info.exp_date,
       });
 
-      // COOKIE DE LOGIN
       res.cookies.set("diow_user", username, {
         httpOnly: true,
         secure: true,
@@ -36,7 +36,6 @@ export async function POST(req: Request) {
       return res;
     }
 
-    // LOGIN INVÁLIDO
     return NextResponse.json(
       {
         success: false,
@@ -47,7 +46,7 @@ export async function POST(req: Request) {
       }
     );
   } catch (error) {
-    console.log(error);
+    console.error("ERRO LOGIN IPTV:", error);
 
     return NextResponse.json(
       {
