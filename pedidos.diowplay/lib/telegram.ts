@@ -1,7 +1,7 @@
 export async function enviarTelegram(
   mensagem: string
 ) {
-  console.log("Telegram:", mensagem);
+  alert("TESTE TELEGRAM:\n\n" + mensagem);
 
   return {
     ok: true,
